@@ -1,0 +1,35 @@
+#define listas vacias
+lista_impar = []
+lista_par = []
+contador = 0
+lista_numeros = []
+while contador < 10:
+    #recibe entradas para llenar listas
+    lista_numeros.append(int(raw_input("ingresa numeros: ")))
+    contador+=1
+#separa digitos par impar y agrega a listas
+for i in lista_numeros:
+    if i % 2 == 1:
+        lista_impar.append(i)
+    elif i % 2 == 0:
+        lista_par.append(i)
+ 
+ 
+print "lista completa: ",lista_numeros
+print "lista impar: ",lista_impar
+ 
+def arreglo():
+    global lista_impar
+    for i in range(1,len(lista_impar)):
+        for o in range(len(lista_impar)-i):
+            if lista_impar[o]>lista_impar[o+1]:
+                temp=lista_impar[o]
+                lista_impar[o]=lista_impar[o+1]
+                lista_impar[o+1]=temp
+ 
+        return lista_impar
+ 
+ 
+arreglo()
+print "lista impar ordenada " , arreglo()
+print "el numero impar mas alto es: ", arreglo()[-1]
